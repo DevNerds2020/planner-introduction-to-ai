@@ -46,3 +46,9 @@ class State:
             result = (result + (negative_literal.__hash__() % PRIME)) % PRIME
 
         return result
+
+    def __str__(self) -> str:
+        # Get the string representation of the State object
+        return "Action: " + self.action_name + "\n" + \
+               "Positive Literals: " + ", ".join([str(positive_literal) for positive_literal in self.positive_literals]) + "\n" + \
+               "Negative Literals: " + ", ".join([str(negative_literal) for negative_literal in self.negative_literals]) + "\n"

@@ -51,3 +51,7 @@ class Predicate:
             return self.name > other.get_name()
 
         return self.objects > other.get_objects()
+
+    def __str__(self) -> str:
+        # Get the string representation of the Predicate object
+        return self.name + "(" + ",".join(self.objects) + ")"

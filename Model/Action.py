@@ -113,3 +113,6 @@ class Action:
             self.action_name, result_positive_literals, result_negative_literals
         )
         return result
+    
+    def __str__(self) -> str:
+        return self.action_name

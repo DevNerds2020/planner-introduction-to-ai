@@ -106,8 +106,8 @@ class Action:
         Returns:
         - The new state after progressing with the action effects.
         """
-        result_positive_literals = state.get_positive_literals().union(self.add_list)
-        result_negative_literals = state.get_negative_literals() - self.delete_list
+        result_positive_literals = state.get_positive_literals().union(self.add_list) - self.delete_list
+        result_negative_literals = state.get_negative_literals().union(self.delete_list) - self.add_list
 
         result = State(
             self.action_name, result_positive_literals, result_negative_literals
